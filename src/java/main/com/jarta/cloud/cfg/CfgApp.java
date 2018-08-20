@@ -36,4 +36,10 @@ public class CfgApp {
     public DataSource localDataSource() {
     	return DataSourceBuilder.create().build();
     }
+    
+    @Bean(name="remoteDB")
+    @ConfigurationProperties("remote.datasource")
+    public DataSource remoteDataSource() {
+    	return DataSourceBuilder.create().build();
+    }
 }
