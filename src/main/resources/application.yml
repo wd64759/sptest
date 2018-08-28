@@ -3,10 +3,12 @@ server:
    
 datasources:
    local:
-     url: jdbc:h2:tcp://localhost/~/localdb
+     # url: jdbc:h2:tcp://localhost/~/localdb
+     jdbc-url: jdbc:h2:~/test
+     username: sa
      driver-class-name: org.h2.Driver
      type: com.zaxxer.hikari.HikariDataSource
-     min-idle: 0
+     min-idle: 1
      max-active: 2
    remote:
      url: jdbc:h2:tcp://localhost/~/remote
@@ -17,6 +19,7 @@ datasources:
 
 spring:
    jpa:
+      database-platform: org.hibernate.dialect.H2Dialect
       show-sql: true
       properties:
          hibernate.enable_lazy_load_no_trans: false
@@ -29,4 +32,5 @@ logging:
       console: "%d %-5level %logger : %msg%n"
    level:
       root: ERROR
-      org.hibernate.SQL: DEBUG         
+      org.hibernate.SQL: DEBUG
+             
