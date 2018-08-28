@@ -11,7 +11,7 @@ datasources:
      min-idle: 1
      max-active: 2
    remote:
-     url: jdbc:h2:tcp://localhost/~/remote
+     jdbc-url: jdbc:h2:tcp://localhost/~/remote
      driver-class-name: org.h2.Driver
      type: com.zaxxer.hikari.HikariDataSource
      min-idle: 0
